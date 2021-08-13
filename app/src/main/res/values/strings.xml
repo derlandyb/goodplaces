@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Good Places</string>
+    <string name="photos">Fotos</string>
+    <string name="about">Sobre</string>
+    <string name="business_hours">Horário de funcionamento</string>
+    <string name="address">Endereço</string>
+    <string name="contact">Contato</string>
+    <string name="reviews">Reviews</string>
+    <string name="see_all_reviews">ver todos os %i reviews</string>
+    <string name="home">Home</string>
+    <string name="explore">Explore</string>
+    <string name="more">More</string>
+</resources>
