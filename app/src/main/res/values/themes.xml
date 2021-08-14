@@ -13,6 +13,7 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@color/white</item>
+        <item name="bottomNavigationStyle">@style/BottomNavigationViewStyle</item>
     </style>
 
     <style name="RatingBar" parent="Base.Widget.AppCompat.RatingBar.Small">
@@ -70,5 +71,10 @@
     <style name="GoodPlaces.SeeAllCommentTextTitle" parent="GoodPlaces.CommentTextTitle">
         <item name="textAllCaps">false</item>
         <item name="android:textSize">14sp</item>
+    </style>
+    <style name="BottomNavigationViewStyle" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="android:background">@color/white</item>
+        <item name="itemTextColor">@color/bottom_nav_item_color</item>
+        <item name="itemIconTint">@color/bottom_nav_item_color</item>
     </style>
 </resources>

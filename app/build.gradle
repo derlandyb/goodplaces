@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id "androidx.navigation.safeargs.kotlin"
+    id "kotlin-kapt"
 }
 
 android {
@@ -19,8 +20,15 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "GOOD_PLACES_BASE_URL", "\"https://hotmart-mobile-app.herokuapp.com/\""
+            buildConfigField "String", "UNSPLASH_PHOTOS_BASE_URL", "\"https://api.unsplash.com/\""
+            buildConfigField "String", "UNSPLASH_API_KEY", "\"bulP29H76LkiZ8gRLnjV9F2ftGHBQXRt_dhKbb6uXFc\""
+        }
+        release {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -39,6 +47,7 @@ android {
 
 dependencies {
     def nav_version = "2.3.5"
+    def koin_version = "3.1.2"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.6.0'
@@ -49,6 +58,14 @@ dependencies {
     // Kotlin
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    implementation "com.squareup.moshi:moshi-kotlin:1.12.0"
+    implementation "com.squareup.retrofit2:converter-moshi:2.8.1"
+    implementation "com.squareup.retrofit2:retrofit:2.8.1"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1'
+    implementation "io.insert-koin:koin-android:$koin_version"
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:1.12.0"
 
     //Test
     testImplementation 'junit:junit:4.13.2'

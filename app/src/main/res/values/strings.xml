@@ -10,4 +10,6 @@
     <string name="home">Home</string>
     <string name="explore">Explore</string>
     <string name="more">More</string>
+    <string name="empty" />
+    <string name="error_occurred">Ocorreu um erro</string>
 </resources>

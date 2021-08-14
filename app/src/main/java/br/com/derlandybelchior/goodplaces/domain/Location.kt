@@ -4,5 +4,6 @@ data class Location(
     val id: Int,
     val name: String,
     val review: Double,
-    val type: String
+    val type: String,
+    val imageUrl: String? = null
 )
