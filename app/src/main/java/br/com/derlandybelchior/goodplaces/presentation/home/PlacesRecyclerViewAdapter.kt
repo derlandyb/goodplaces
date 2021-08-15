@@ -3,14 +3,13 @@ package br.com.derlandybelchior.goodplaces.presentation.home
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import br.com.derlandybelchior.goodplaces.R
 import br.com.derlandybelchior.goodplaces.databinding.GridItemBinding
+import br.com.derlandybelchior.goodplaces.presentation.imagetool.LoadImage
 import br.com.derlandybelchior.goodplaces.presentation.model.PlacePresentationModel
-import com.squareup.picasso.Picasso
 
 class PlacesRecyclerViewAdapter(
     private val data: List<PlacePresentationModel>,
-    private val onClick: () -> Unit
+    private val onClick: (Int, String?) -> Unit
 ) : RecyclerView.Adapter<PlacesRecyclerViewAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(private val binding: GridItemBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -20,21 +19,7 @@ class PlacesRecyclerViewAdapter(
             title.text = placePresentationModel.name
             type.text = placePresentationModel.type
             rating.rating = placePresentationModel.review.toFloat()
-
-            loadImage(imageUrl = placePresentationModel.imageUrl)
-        }
-
-        private fun loadImage(imageUrl: String?) = with(binding) {
-            imageUrl?.let {
-                Picasso.get()
-                    .load(imageUrl)
-                    .fit()
-                    .centerCrop()
-                    .placeholder(R.drawable.place_image_placeholder)
-                    .error(R.drawable.place_image_placeholder)
-                    .into(placeImage)
-            } ?: placeImage.setImageResource(R.drawable.place_image_placeholder)
-
+            LoadImage.loadImageByUrl(placePresentationModel.imageUrl, placeImage)
         }
     }
 
@@ -45,7 +30,7 @@ class PlacesRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.bindView(position)
-        holder.itemView.setOnClickListener { onClick() }
+        holder.itemView.setOnClickListener { onClick(data[position].id, data[position].imageUrl) }
     }
 
     override fun getItemCount(): Int = data.size

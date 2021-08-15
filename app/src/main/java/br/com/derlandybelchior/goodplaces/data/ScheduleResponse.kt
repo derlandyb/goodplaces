@@ -6,17 +6,17 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ScheduleResponse(
     @field:Json(name = "monday")
-    val monday: LocationBusinessHoursResponse,
+    val monday: LocationBusinessHoursResponse?,
     @field:Json(name = "tuesday")
-    val tuesday: LocationBusinessHoursResponse,
+    val tuesday: LocationBusinessHoursResponse?,
     @field:Json(name = "wednesday")
-    val wednesday: LocationBusinessHoursResponse,
+    val wednesday: LocationBusinessHoursResponse?,
     @field:Json(name = "thursday")
-    val thursday: LocationBusinessHoursResponse,
+    val thursday: LocationBusinessHoursResponse?,
     @field:Json(name = "friday")
-    val friday: LocationBusinessHoursResponse,
+    val friday: LocationBusinessHoursResponse?,
     @field:Json(name = "saturday")
-    val saturday: LocationBusinessHoursResponse,
+    val saturday: LocationBusinessHoursResponse?,
     @field:Json(name = "sunday")
-    val sunday: LocationBusinessHoursResponse
+    val sunday: LocationBusinessHoursResponse?
 )

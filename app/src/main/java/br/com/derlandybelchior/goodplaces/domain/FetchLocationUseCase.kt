@@ -16,6 +16,4 @@ class FetchLocationUseCase(private val locationRepository: LocationRepository) {
             Resource.Error(e)
         }
     }
-
-
 }

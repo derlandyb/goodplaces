@@ -26,6 +26,8 @@ android {
             buildConfigField "String", "GOOD_PLACES_BASE_URL", "\"https://hotmart-mobile-app.herokuapp.com/\""
             buildConfigField "String", "UNSPLASH_PHOTOS_BASE_URL", "\"https://api.unsplash.com/\""
             buildConfigField "String", "UNSPLASH_API_KEY", "\"bulP29H76LkiZ8gRLnjV9F2ftGHBQXRt_dhKbb6uXFc\""
+            buildConfigField "String", "REVIEWS_BASE_URL", "\"https://good-places-1dab6-default-rtdb.firebaseio.com/\""
+            buildConfigField "String", "RANDOMUSER_BASE_URL", "\"https://randomuser.me/api/portraits/thumb/\""
         }
         release {
             minifyEnabled true

@@ -1,16 +1,10 @@
 package br.com.derlandybelchior.goodplaces.data.service
 
-import br.com.derlandybelchior.goodplaces.data.dto.SearchResponse
+import br.com.derlandybelchior.goodplaces.data.dto.CommentResponse
 import retrofit2.http.GET
-import retrofit2.http.Query
 
 interface ReviewsLocationServiceAPI {
 
-    @GET("search/photos")
-    suspend fun searchPhotos(
-        @Query("client_id") clientId: String,
-        @Query("query") criteria: String,
-        @Query("page") page: Int = 1,
-        @Query("per_page") pageSize: Int = 1
-    ): SearchResponse
+    @GET("comments.json")
+    suspend fun getComments(): List<CommentResponse>
 }

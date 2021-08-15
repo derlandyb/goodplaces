@@ -16,6 +16,7 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
+import java.util.*
 
 @ExperimentalCoroutinesApi
 @RunWith(JUnit4::class)
@@ -101,34 +102,11 @@ class FetchLocationUseCaseTest {
                 about = "",
                 address = "",
                 phone = "",
-                schedule = Schedule(
-                    monday = LocationBusinessHours(
+                schedule = listOf(
+                    Schedule(
                         open = "7h",
-                        close = "13h"
-                    ),
-                    tuesday = LocationBusinessHours(
-                        open = "7h",
-                        close = "23h"
-                    ),
-                    wednesday = LocationBusinessHours(
-                        open = "7h",
-                        close = "23h"
-                    ),
-                    thursday = LocationBusinessHours(
-                        open = "7h",
-                        close = "23h"
-                    ),
-                    friday = LocationBusinessHours(
-                        open = "7h",
-                        close = "23h"
-                    ),
-                    saturday = LocationBusinessHours(
-                        open = "7h",
-                        close = "23h"
-                    ),
-                    sunday = LocationBusinessHours(
-                        open = "7h",
-                        close = "23h"
+                        close = "13h",
+                        dayOfWeek = Calendar.MONDAY
                     )
                 )
             )

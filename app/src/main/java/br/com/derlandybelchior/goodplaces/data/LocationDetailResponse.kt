@@ -9,7 +9,7 @@ data class LocationDetailResponse(
     val id: Int,
     @field:Json(name = "about")
     val about: String,
-    @field:Json(name = "address")
+    @field:Json(name = "adress")
     val address: String,
     @field:Json(name = "name")
     val name: String,

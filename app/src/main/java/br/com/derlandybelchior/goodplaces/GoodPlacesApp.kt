@@ -5,8 +5,10 @@ import br.com.derlandybelchior.goodplaces.data.service.LocationServiceAPI
 import br.com.derlandybelchior.goodplaces.data.RemoteRepository
 import br.com.derlandybelchior.goodplaces.data.service.GoodPlacesServices
 import br.com.derlandybelchior.goodplaces.data.service.PhotoLocationServiceAPI
+import br.com.derlandybelchior.goodplaces.data.service.ReviewsLocationServiceAPI
 import br.com.derlandybelchior.goodplaces.domain.FetchLocationUseCase
 import br.com.derlandybelchior.goodplaces.domain.LocationRepository
+import br.com.derlandybelchior.goodplaces.presentation.detail.PlaceDetailViewModel
 import br.com.derlandybelchior.goodplaces.presentation.home.PlacesViewModel
 import kotlinx.coroutines.Dispatchers
 import org.koin.android.ext.koin.androidContext
@@ -34,7 +36,11 @@ private val appModule = module {
     }
 
     factory<LocationRepository> {
-        RemoteRepository(locationServiceAPI = get(), photoLocationServiceAPI = get())
+        RemoteRepository(
+            locationServiceAPI = get(),
+            photoLocationServiceAPI = get(),
+            reviewsLocationServiceAPI = get()
+        )
     }
 
     single<LocationServiceAPI> {
@@ -47,8 +53,19 @@ private val appModule = module {
             .create(PhotoLocationServiceAPI::class.java)
     }
 
+    single<ReviewsLocationServiceAPI> {
+        GoodPlacesServices.retrofit(BuildConfig.REVIEWS_BASE_URL)
+            .create(ReviewsLocationServiceAPI::class.java)
+    }
+
     viewModel {
         PlacesViewModel(
+            fetchLocationUseCase = get(),
+            dispatcher = Dispatchers.IO
+        )
+    }
+    viewModel {
+        PlaceDetailViewModel(
             fetchLocationUseCase = get(),
             dispatcher = Dispatchers.IO
         )

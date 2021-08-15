@@ -7,6 +7,8 @@ data class LocationDetail(
     val name: String,
     val phone: String,
     val review: Double,
-    val schedule: Schedule,
-    val type: String
+    val schedule: List<Schedule>,
+    val type: String,
+    val gallery: List<String> = listOf(),
+    val comments: List<Comment> = listOf()
 )

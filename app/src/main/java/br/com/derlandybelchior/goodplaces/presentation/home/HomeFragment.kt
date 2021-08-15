@@ -19,13 +19,6 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding
     private val viewModel: PlacesViewModel by viewModel()
 
-    private val images = arrayOf(
-        R.drawable.istockphoto,
-        R.drawable.istockphoto2,
-        R.drawable.istockphoto3,
-        R.drawable.istockphoto4,
-    )
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -61,8 +54,8 @@ class HomeFragment : Fragment() {
     private fun setupRecyclerView(data: List<PlacePresentationModel>) = with(binding) {
         val staggeredGridLayoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
         this?.contentList?.layoutManager = staggeredGridLayoutManager
-        this?.contentList?.adapter = PlacesRecyclerViewAdapter(data) {
-            val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment2()
+        this?.contentList?.adapter = PlacesRecyclerViewAdapter(data) { id, imageUrl ->
+            val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(id, imageUrl)
             findNavController().navigate(action)
         }
 
@@ -71,6 +64,7 @@ class HomeFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        println("onDestroy - HomeFragment")
         _binding = null
     }
 }
