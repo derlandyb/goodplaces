@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Good Places</string>
+    <string name="photos">Photos</string>
+    <string name="about">About</string>
+    <string name="business_hours">Business hours</string>
+    <string name="address">Address</string>
+    <string name="contact">Contact</string>
+    <string name="reviews">Reviews</string>
+    <string name="see_all_reviews">see all %i reviews</string>
+    <string name="home">Home</string>
+    <string name="explore">Explore</string>
+    <string name="more">More</string>
+    <string name="empty" />
+    <string name="error_occurred">Error occurred</string>
+    <string-array name="weekdays">
+        <item>sun</item>
+        <item>mon</item>
+        <item>tue</item>
+        <item>wed</item>
+        <item>thu</item>
+        <item>fri</item>
+        <item>sat</item>
+    </string-array>
+</resources>

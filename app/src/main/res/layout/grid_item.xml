@@ -21,7 +21,7 @@
             android:adjustViewBounds="true"
             android:fitsSystemWindows="true"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/place_image_placeholder"
+            android:src="@drawable/image_placeholder_duck_egg_blue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

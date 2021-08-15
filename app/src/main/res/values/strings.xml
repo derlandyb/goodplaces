@@ -6,10 +6,20 @@
     <string name="address">Endereço</string>
     <string name="contact">Contato</string>
     <string name="reviews">Reviews</string>
-    <string name="see_all_reviews">ver todos os %i reviews</string>
+    <string name="see_all_reviews">ver todos os %d reviews</string>
     <string name="home">Home</string>
     <string name="explore">Explore</string>
     <string name="more">More</string>
     <string name="empty" />
     <string name="error_occurred">Ocorreu um erro</string>
+
+    <string-array name="weekdays">
+        <item>dom</item>
+        <item>seg</item>
+        <item>ter</item>
+        <item>qua</item>
+        <item>qui</item>
+        <item>sex</item>
+        <item>sab</item>
+    </string-array>
 </resources>

@@ -6,13 +6,13 @@
         android:title="@string/home"
         app:showAsAction="ifRoom"
         android:orderInCategory="1"
-        android:icon="@drawable/home_off"/>
+        android:icon="@drawable/home_selector"/>
 
     <item android:id="@+id/explore"
         android:title="@string/empty"
         app:showAsAction="ifRoom"
         android:orderInCategory="2"
-        android:icon="@drawable/map_off"/>
+        android:icon="@drawable/explore_selector"/>
 
 
     <item android:id="@+id/profile"
